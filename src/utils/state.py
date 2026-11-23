@@ -1,6 +1,6 @@
 from typing_extensions import TypedDict
-from typing import Optional
-from objects import Analyst
+from typing import List, Optional
+from src.utils.objects import Analyst
 
 # State
 class GenerateAnalystSate(TypedDict):

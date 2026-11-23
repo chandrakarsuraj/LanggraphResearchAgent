@@ -4,4 +4,4 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-llm = ChatOpenAI("gpt-6-luna")
+llm = ChatOpenAI(model= "gpt-6-luna")

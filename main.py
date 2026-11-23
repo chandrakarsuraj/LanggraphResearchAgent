@@ -1,10 +1,14 @@
 
-from src.utils.nodes import create_analyst
+from src.create_analyst import graph
+from langchain_core.messages import HumanMessage
 from rich import print
 
-res = create_analyst({
-    "topic": "India after 2014",
-    "max_analysts": 5,
-    "human_analyst_feedback": "no"
+res = graph.invoke({
+    "messages": {
+        "topic": "India after 2014",
+        "max_analysts": 5,
+        "human_analyst_feedback": "no"
+    }
 })
+
 print(res)
