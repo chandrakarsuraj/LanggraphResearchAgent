@@ -17,3 +17,10 @@ class Analyst(BaseModel):
 
 class Perspective(BaseModel):
     analysts: List[Analyst] = Field(description="A list of analyst personas to consult, each representing a distinct area of expertise or viewpoint for the research.")
+
+
+
+class SearchQuery(BaseModel):
+
+    search_query: str = Field(description="Search query for retrivel")
+    

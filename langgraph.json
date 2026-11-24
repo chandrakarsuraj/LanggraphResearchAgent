@@ -1,7 +1,8 @@
 {
   "dependencies": ["."],
   "graphs": {
-    "create_analyst": "./src/create_analyst.py:graph"
+    "create_analyst": "./src/create_analyst.py:graph",
+    "que_n_ans": "./src/qa_agent.py:graph"
   },
   "env": ".env"
 }
