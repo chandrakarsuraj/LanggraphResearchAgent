@@ -18,7 +18,7 @@ def create_analyst(state:GenerateAnalystSate)->Dict[str, Any]:
     """Create analyst"""
     topic = state["topic"]
     max_analyst = state["max_analysts"]
-
+    human_analyst_feedback = state.get("human_analyst_feedback")
 
     # Enforce Structere Output
     structured_llm = llm.with_structured_output(Perspective)
@@ -30,7 +30,8 @@ def create_analyst(state:GenerateAnalystSate)->Dict[str, Any]:
         SystemMessage( analyst_instructions),
         HumanMessage(f""" 
             Topic: {topic},
-            Max Analyst : {max_analyst}
+            Max Analyst : {max_analyst},
+            Human analyst feedback: {human_analyst_feedback}
         """)
     ]
 
@@ -53,9 +54,9 @@ def human_feedback(state:GenerateAnalystSate)->Dict[str, Any]:
         }
     )
     if feedback is None:
-        return {"human_analyst_feedback", None}
+        return {"human_analyst_feedback" : None}
 
     if feedback.lower() in {"perfect","okay", "yes", "continue" }:
-        return {"human_analyst_feedback", None}
+        return {"human_analyst_feedback": None}
 
     return {"human_analyst_feedback": feedback}

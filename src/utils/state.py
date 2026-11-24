@@ -1,5 +1,5 @@
 from typing_extensions import TypedDict
-from typing import List, Optional
+from typing import List, Optional, NotRequired
 from src.utils.objects import Analyst
 
 # State

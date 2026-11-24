@@ -10,6 +10,7 @@ topic: The research topic that needs to be investigated.
 
 max_analyst: The maximum number of analysts to generate.
 
+human_analyst_feedback: Optional feedback, suggestions, or instructions provided by a human to improve or refine the analyst selection.
 
 Your Responsibilities
 

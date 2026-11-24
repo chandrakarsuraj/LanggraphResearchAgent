@@ -12,7 +12,7 @@ builder.add_node("human_feedback", human_feedback)
 builder.add_edge(START, "create_analyst")
 
 builder.add_edge("create_analyst", "human_feedback")
-builder.add_conditional_edges("human_feedback", should_continue)
+builder.add_conditional_edges("human_feedback", should_continue, ["create_analyst", END])
 
 
 graph = builder.compile()
